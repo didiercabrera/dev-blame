@@ -4,7 +4,10 @@ var router = express.Router();
 
 var DB = {
 	users:{
-		
+		1:{
+			name:didier,
+			skills:[]
+		}
 	}
 
 };

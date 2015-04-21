@@ -10,10 +10,17 @@
     "cookie-parser": "~1.3.3",
     "debug": "~2.1.1",
     "express": "~4.10.6",
+    "grunt": "^0.4.5",
     "jade": "~1.8.2",
     "mongoose": "^4.0.1",
     "morgan": "~1.5.1",
     "node-slack": "0.0.5",
-    "serve-favicon": "~2.2.0"
+    "serve-favicon": "~2.2.0",
+    "grunt": "^0.4.5",
+    "grunt-contrib-concat": "^0.5.0",
+    "grunt-contrib-connect": "^0.8.0",
+    "grunt-contrib-jshint": "^0.10.0",
+    "grunt-contrib-uglify": "^0.6.0",
+    "grunt-contrib-watch": "^0.6.1"    
   }
 }

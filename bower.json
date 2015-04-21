@@ -4,9 +4,10 @@
   "authors": [
     "Didier Cabrera <didierctorres@gmail.com>"
   ],
-  "description": "LNPS web development framework research",
+  "description": "Dev Blame",
   "homepage": "global.laurete.net/global-react.aspx",
   "private": true,
+    "directory" : "public/components",
   "ignore": [
     "**/.*",
     "node_modules",
@@ -15,8 +16,6 @@
     "tests"
   ],
   "dependencies": {
-    "react": "~0.13.1",
-    "angular": "~1.3.15",
-    "ngReact": "~0.1.4"
+    "angular": "~1.3.15"
   }
 }
