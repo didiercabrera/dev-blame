@@ -7,35 +7,48 @@
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width">
     <link rel="stylesheet" type="text/css" href="/bower_components/bootstrap/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="/stylesheets/signin.css">
     <script src='javascripts/libs.js'></script>
     <script src='javascripts/app.js'></script>
   </head>
-  <body ng-app="pichu">
+  <body ng-app="devux">
+    <div class="container-fluid text-center" ng-controller='main'>
+            <div class="page-header text-center">
+                <h1>Se cayo Produccion <small>Otra vez</small></h1>
+            </div>
+            <div class="row">
+                <div class="col-md-4 col-md-offset-4">
 
-    <div class="container">
-      <div class="row">
-        <div class="col-xs-6 col-md-3">
-            <dev-alert></dev-alert>
+                    <ul class="nav nav-pills">
+                        <li role="presentation"><a>General</a></li>
+                        <li role="presentation" class="active"><a >Devs vs UX</a></li>
+                        <li role="presentation"><a ng-click='addNew()' href='#/'>Agregar</a></li>
+                    </ul>                
+                    <div class="thumbnail" ng-show='container.adding'>
+                      <img src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9InllcyI/PjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB3aWR0aD0iMjQyIiBoZWlnaHQ9IjIwMCIgdmlld0JveD0iMCAwIDI0MiAyMDAiIHByZXNlcnZlQXNwZWN0UmF0aW89Im5vbmUiPjxkZWZzLz48cmVjdCB3aWR0aD0iMjQyIiBoZWlnaHQ9IjIwMCIgZmlsbD0iI0VFRUVFRSIvPjxnPjx0ZXh0IHg9IjkyLjQ2ODc1IiB5PSIxMDAiIHN0eWxlPSJmaWxsOiNBQUFBQUE7Zm9udC13ZWlnaHQ6Ym9sZDtmb250LWZhbWlseTpBcmlhbCwgSGVsdmV0aWNhLCBPcGVuIFNhbnMsIHNhbnMtc2VyaWYsIG1vbm9zcGFjZTtmb250LXNpemU6MTFwdDtkb21pbmFudC1iYXNlbGluZTpjZW50cmFsIj4yNDJ4MjAwPC90ZXh0PjwvZz48L3N2Zz4=" alt="...">
+                      <div class="caption">
+                        <h2>GIF src</h2>
+                        <input placeholder='Src' ng-model='container.src'>
+                        <h2>Caption</h2>
+                        <input placeholder='Caption' ng-model='container.caption'>
+                        <input type="checkbox" aria-label="Dev vs UX">
+                        <label>Dev vs UX</label>
+                      </div>
+                    <button type="submit" class="btn btn-default" ng-click='submit()'>Enviar</button>
+                    </div>           
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-4 col-md-offset-4">
+                    <a class="thumbnail" ng-repeat='reaction in reactions' href='#/{{reaction._id}}'>
+                        <img ng-src="{{reaction.imgsrc}}" alt="cuando no hacen grunt">
+                        <div class="caption">
+                            <h3>{{reaction.caption}}</h3>
+                        </div>
+                    </a>
+                </div>
+            </div>
         </div>
-
-        <div class="col-xs-6 col-md-3">
-            <a href="#" class="thumbnail" dev-alert message='deploy'>
-                <span class="glyphicon glyphicon-cloud" aria-hidden="true"></span>
-                <span class="glyphicon-class">Deploy</span>
-            </a>
-        </div>
-
-        <div class="col-xs-6 col-md-3">
-            <a href="#" class="thumbnail" dev-alert message='production down'>
-                <span class="glyphicon glyphicon-fire" aria-hidden="true"></span>
-                <span class="glyphicon-class">Production is Down!</span>            
-            </a>
-        </div>
-                        
-      </div>
     </div>
-
 
   </body>
 </html>

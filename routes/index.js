@@ -6,4 +6,8 @@ router.get('/', function(req, res) {
   res.render('index', { title: 'Express' });
 });
 
+var reactionsCtrl = require('../api/controllers/reactionCtrl');
+router.get('/reactions',reactionsCtrl.getAll);
+
+router.post('/reactions',reactionsCtrl.create);
 module.exports = router;

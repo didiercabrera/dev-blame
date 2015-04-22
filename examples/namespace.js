@@ -9,6 +9,5 @@ module.exports = {
 	},
 	options:{
 		version:'6.6.6'
-	},
-	wtf:require('express')
+	}
 }
