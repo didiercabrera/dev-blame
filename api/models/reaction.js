@@ -2,7 +2,8 @@ var mongoose=require('mongoose');
 
 var IMG_schema = new mongoose.Schema({
 	imgsrc:{type:String},
-	caption:{type:String}
+	caption:{type:String},
+	created_at:{type:Date, default:Date.now}
 });
 
 var Img = mongoose.model('Img',IMG_schema);
