@@ -21,7 +21,7 @@ angular.module('devux',[])
 			imgsrc:$scope.container.src,
 			caption:$scope.container.caption
 		}).success(function (data) {
-			$scope.reactions.push({
+			$scope.reactions.unshift({
 				imgsrc:$scope.container.src,
 				caption:$scope.container.caption				
 			});
