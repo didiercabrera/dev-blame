@@ -1,4 +1,5 @@
 var Reaction = require('../models/reaction');
+var https = require('https');
 
 module.exports = {
 	create:function (req, res) {
@@ -10,6 +11,15 @@ module.exports = {
 				if(err){
 					res.status(500).end()
 				}else{
+
+					// https.request({
+					// 	host:'https://hooks.slack.com/services/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',
+					// 	methos:'POST'
+					// },function (res){
+						
+					// });
+
+
 					res.status(200).end()
 				}
 			});
@@ -23,7 +33,11 @@ module.exports = {
 	getById:function (req, res) {
 		var ID = req.param('id');
 		Reaction.getOne(ID,function (err, reaction) {
-			res.json(reaction);
+			res.render('reaction',{
+				title:reaction.caption,
+				caption:reaction.caption,
+				imgsrc:reaction.imgsrc
+			});
 		});
 	}
 }
