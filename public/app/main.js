@@ -9,7 +9,7 @@ angular.module('devux',[])
 
 	$scope.reactions = [];
 
-	$http.get('/reactions').success(function(data){
+	$http.get('/reactions/1').success(function(data){
 		$scope.reactions = data.reverse();
 	});
 	$scope.addNew = function () {

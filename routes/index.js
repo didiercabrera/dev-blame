@@ -8,7 +8,7 @@ router.get('/', function(req, res) {
 
 var reactionsCtrl = require('../api/controllers/reactionCtrl');
 router.get('/reaction/:id',reactionsCtrl.getById)
-router.get('/reactions',reactionsCtrl.getAll);
+router.get('/reactions/:pagination',reactionsCtrl.getAll);
 
 router.post('/reactions',reactionsCtrl.create);
 module.exports = router;
