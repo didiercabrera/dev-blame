@@ -31,5 +31,43 @@ angular.module('devux',[])
 				caption:''
 			}
 		});
+	};
+}])
+
+.directive('like',['$http',function ($http){
+	return {
+		restrict:'A',
+		scope:{
+			likes:'=likes',
+			rid:'=rid'
+		},
+		link:function (scope,element,attrs){
+			element.bind('click',function (){
+				$http.post('/reactions/like',{
+					id:scope.rid,
+				}).success(function (data) {
+					scope.likes = (scope.likes || 0) + 1;
+				});				
+			})
+		}
 	}
-}]);
+}])
+
+.directive('dislike',['$http',function ($http){
+	return {
+		restrict:'A',
+		scope:{
+			dislikes:'=dislikes',
+			rid:'=rid'
+		},
+		link:function (scope,element,attrs){
+			element.bind('click',function (){
+				$http.post('/reactions/dislike',{
+					id:scope.rid,
+				}).success(function (data) {
+					scope.dislikes = (scope.dislikes || 0) + 1;
+				});				
+			})
+		}
+	}
+}])

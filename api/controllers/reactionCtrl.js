@@ -49,5 +49,25 @@ module.exports = {
 				imgsrc:reaction.imgsrc
 			});
 		});
-	}
+	},
+	like:function (req,res){
+		var id = req.param('id');
+		Reaction.like(id,req.ip,function (err){
+			if(err){
+				res.status(503).end()
+			}else{
+				res.status(200).end()
+			}
+		});
+	},
+	disLike:function (req,res){
+		var id = req.param('id');
+		Reaction.dislike(id,req.ip,function (err){
+			if(err){
+				res.status(503).end()
+			}else{
+				res.status(200).end()
+			}
+		});
+	}	
 }
