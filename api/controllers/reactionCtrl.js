@@ -46,7 +46,9 @@ module.exports = {
 			res.render('reaction',{
 				title:reaction.caption,
 				caption:reaction.caption,
-				imgsrc:reaction.imgsrc
+				imgsrc:reaction.imgsrc,
+				likes:reaction.likes,
+				dislikes:reaction.dislikes
 			});
 		});
 	},

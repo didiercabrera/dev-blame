@@ -16,3 +16,9 @@ block content
                     img(src= imgsrc)
                     div.caption
                         h3=caption
+                        button.btn.btn-danger
+                            span.glyphicon.glyphicon-heart
+                            span  #{likes}
+                        button.btn
+                            span.glyphicon.glyphicon-remove
+                            span  #{dislikes}
