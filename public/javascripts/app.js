@@ -10,8 +10,13 @@ angular.module('devux',[])
 	$scope.reactions = [];
 
 	$http.get('/reactions/1').success(function(data){
-		$scope.reactions = data.reverse();
+		$scope.reactions =[];
+		var order_data = data.sort(function (a,b){
+			return (a.likes||0) >(b.likes||0);
+		});
+		$scope.reactions = order_data.reverse();
 	});
+
 	$scope.addNew = function () {
 		$scope.container.adding = true;
 	}
