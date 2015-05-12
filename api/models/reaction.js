@@ -25,9 +25,9 @@ module.exports = {
 	},
 	getAll:function (pagination,callback) {
 		if(pagination){
-			Img.find({},{},callback)
+			Img.find({},{},{skip:(pagination*10)-10,limit:10},callback);
 		}else{
-			Img.find({},{},callback);
+			Img.find({},{},{skip:(1*10)-10,limit:10},callback);
 		}
 	},
 	like:function (id,ip,callback){
