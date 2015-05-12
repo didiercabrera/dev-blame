@@ -13,13 +13,15 @@
   <body ng-app="devux">
     <div class="container-fluid text-center" ng-controller='main'>
             <div class="page-header text-center">
-                <h1>Se cayo Produccion <small>Otra vez</small></h1>
+                <h1>Algo bueno está pasando<small>Dev está cambiando</small></h1>
             </div>
             <div class="row">
                 <div class="col-md-4 col-md-offset-4">
 
                     <ul class="nav nav-pills">
-                        <li role="presentation" class="active"><a ng-click='addNew()' href='#/'>Agregar</a></li>
+                        <li role="presentation"><a ng-click='addNew()'>Agregar</a></li>
+                        <li role="presentation"><a ng-click='all()'>All</a></li>
+                        <li role="presentation"><a ng-click='top()'>Top</a></li>
                     </ul>                
                     <div class="thumbnail" ng-show='container.adding'>
                       <img src="{{container.src}}" alt="...">
@@ -35,7 +37,7 @@
             </div>
             <div class="row">
                 <div class="col-md-4 col-md-offset-4">
-                    <div ng-repeat='reaction in reactions' class="thumbnail">
+                    <div ng-repeat='reaction in reactions | orderBy:"-tms"' class="thumbnail">
                         <a href='/reaction/{{reaction._id}}'>
                             <img ng-src="{{reaction.imgsrc}}" alt="cuando no hacen grunt">
                             <div class="caption">
